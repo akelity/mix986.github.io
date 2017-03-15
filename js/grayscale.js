@@ -164,23 +164,25 @@ function init() {
     // We are using a div with id="map" seen below in the <body>
     var mapElement = document.getElementById('map');
 
-    // Create the Google Map using out element and options defined above
-    var map = new google.maps.Map(mapElement, mapOptions);
+    if(mapElement!==null) {
+      // Create the Google Map using out element and options defined above
+      var map = new google.maps.Map(mapElement, mapOptions);
 
-    // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
-    var image = 'img/map-marker.png';
-    var myLatLng = new google.maps.LatLng(45.464211, 9.191383);
-    var beachMarker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        icon: image
-    });
+      // Custom Map Marker Icon - Customize the map-marker.png file to customize your icon
+      var image = 'img/map-marker.png';
+      var myLatLng = new google.maps.LatLng(45.464211, 9.191383);
+      var beachMarker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          icon: image
+      });
 
-    // InfoWindow
-    var infowindow = new google.maps.InfoWindow({
-        content: '<a href="https://goo.gl/maps/Pn4VYe4BDNp"><strong>LUISS EnLabs</strong><address>Roma Termini, Via Marsala, 29/h,<br/>00185 Roma</address></a>'
-    });
-    beachMarker.addListener('click', function() {
-        infowindow.open(map, beachMarker);
-    });
+      // InfoWindow
+      var infowindow = new google.maps.InfoWindow({
+          content: '<a href="https://goo.gl/maps/Pn4VYe4BDNp"><strong>LUISS EnLabs</strong><address>Roma Termini, Via Marsala, 29/h,<br/>00185 Roma</address></a>'
+      });
+      beachMarker.addListener('click', function() {
+          infowindow.open(map, beachMarker);
+      });
+    }
 }
