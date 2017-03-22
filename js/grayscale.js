@@ -179,7 +179,7 @@ function init() {
 
       // InfoWindow
       var infowindow = new google.maps.InfoWindow({
-          content: '<a href="https://goo.gl/maps/NE6ti58FNz22"><strong>Talent Garden Calabiana</strong><address>Via Arcivescovo Calabiana N°6,<br/> 20139 Milano</address></a>'
+          content: '<a href="https://goo.gl/maps/NE6ti58FNz22"><strong>Talent Garden Milano Calabiana</strong><address>Via Arcivescovo Calabiana N°6,<br/> 20139 Milano</address></a>'
       });
       beachMarker.addListener('click', function() {
           infowindow.open(map, beachMarker);
